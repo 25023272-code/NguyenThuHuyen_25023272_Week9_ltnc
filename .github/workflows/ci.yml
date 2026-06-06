@@ -23,7 +23,21 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Bai03
-        run: mvn clean package -f Bai03/pom.xml
+        run: mvn clean package --file Bai03/pom.xml
 
       - name: Test Bai03
-        run: mvn test -f
+        run: mvn test --file Bai03/pom.xml
+
+      - name: Build Bai04
+        run: mvn clean package --file Bai04/pom.xml
+
+      - name: Test Bai04
+        run: mvn test --file Bai04/pom.xml
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jars-${{ matrix.os }}
+          path: |
+            Bai03/target/*.jar
+            Bai04/target/*.jar

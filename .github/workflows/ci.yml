@@ -21,6 +21,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'
 
       - name: Build Bai03
         run: mvn clean package --file Bai03/pom.xml
@@ -34,6 +35,15 @@ jobs:
       - name: Test Bai04
         run: mvn test --file Bai04/pom.xml
 
+      - name: Verify Bai05 with JaCoCo
+        run: mvn verify --file Bai05/pom.xml
+
+      - name: Upload JaCoCo Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report-${{ matrix.os }}
+          path: Bai05/target/site/jacoco/
+
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
@@ -41,3 +51,17 @@ jobs:
           path: |
             Bai03/target/*.jar
             Bai04/target/*.jar
+            Bai05/target/*.jar
+
+  checkstyle:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkstyle Review
+        uses: dbelyaev/action-checkstyle@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          checkstyle_config: Bai02/src/google_checks.xml

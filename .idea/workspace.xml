@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9436121d-b193-4e23-bbc3-870fc86ca4db" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Bai03/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Bai03/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bai04/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bai04/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bai04/src/main/java/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bai04/src/test/java/FileUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NguyenThuHuyen25023272_Week9_ltnc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NguyenThuHuyen25023272_Week9_ltnc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MathUtils.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +61,7 @@
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",

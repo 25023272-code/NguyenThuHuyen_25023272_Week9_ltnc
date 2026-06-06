@@ -8,7 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v4
@@ -19,14 +22,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Build with Maven
+      - name: Build Bai03
         run: mvn clean package -f Bai03/pom.xml
 
-      - name: Run Tests
-        run: mvn test -f Bai03/pom.xml
-
-      - name: Upload JAR artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Bai03-jar
-          path: Bai03/target/*.jar
+      - name: Test Bai03
+        run: mvn test -f
